@@ -23,3 +23,19 @@ function actualizarLista() {
         listaAmigos.appendChild(li);
     });
 }
+function sortearAmigo() {
+    if (amigos.length <= 0) {
+        alert("Primero ingresa al menos dos nombres.");
+    }
+    else if (amigos.length == 1) {
+        alert("No hay suficientes nombres en la lista para comenzar el sorteo.");
+    }
+    else {
+        let indiceRandom = Math.floor(Math.random() * amigos.length);
+        let amigoSorteado = amigos[indiceRandom];
+
+        let resultadoAmigoSorteo = document.getElementById("resultado");
+        resultadoAmigoSorteo.innerHTML = `<li>${amigoSorteado} es el amigo secreto!</li>`;
+
+    }
+}
